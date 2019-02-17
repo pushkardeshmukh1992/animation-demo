@@ -14,10 +14,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        view.backgroundColor = UIColor(white: 1, alpha: 0.1)
+        view.backgroundColor = UIColor.red
         
         let darkTextLabel = UILabel()
-        darkTextLabel.text = "Shimmer"
+        darkTextLabel.text = "Animation"
         darkTextLabel.textColor = UIColor(white: 1, alpha: 0.2)
         darkTextLabel.font = UIFont.systemFont(ofSize: 80)
         darkTextLabel.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 400)
@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         view.addSubview(darkTextLabel)
         
         let shinyTextLabel = UILabel()
-        shinyTextLabel.text = "Shimmer"
+        shinyTextLabel.text = "Animation"
         shinyTextLabel.textColor = .white
         shinyTextLabel.font = UIFont.systemFont(ofSize: 80)
         shinyTextLabel.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 400)
@@ -50,10 +50,7 @@ class ViewController: UIViewController {
         animation.duration = 2
         
         gradientLayer.add(animation, forKey: "doesnt matter")
-//        view.layer.addSublayer(gradientLayer)
         
     }
-
-
 }
 
