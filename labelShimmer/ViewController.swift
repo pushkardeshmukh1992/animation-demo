@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        view.backgroundColor = UIColor.red
+        view.backgroundColor = UIColor.white
         
         let darkTextLabel = UILabel()
         darkTextLabel.text = "Animation"
@@ -51,6 +51,21 @@ class ViewController: UIViewController {
         
         gradientLayer.add(animation, forKey: "doesnt matter")
         
+        let openSkeletonLoaderButton = UIButton()
+        openSkeletonLoaderButton.setTitle("Open Loader", for: .normal)
+        openSkeletonLoaderButton.addTarget(self, action: #selector(skeletonLoaderTapped(_:)), for: .touchUpInside)
+        
+        openSkeletonLoaderButton.frame = CGRect(x: 0, y: view.frame.height - 100, width: view.frame.width - 100, height: 50)
+        openSkeletonLoaderButton.center.x = view.center.x
+        view.addSubview(openSkeletonLoaderButton)
+    }
+    
+    @objc func skeletonLoaderTapped(_ sender: UIButton) {
+        let skeletonVC = SkeletonLoaderVC()
+        
+//        let navControl = UINavigationController(rootViewController: skeletonVC)
+//        self.navigationController?.pushViewController(navControl, animated: true)
+        self.present(skeletonVC, animated: true)
     }
 }
 
